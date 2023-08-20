@@ -11,34 +11,24 @@ let width = 30;
 let height = 30;
 function createBoxes(amount) {
   for (let i = 0; i < amount; i++) {
-    let blockCreate = `<div width = "${width}px" height = "${height}px" style = "background: ${getRandomHexColor()}">fghj</div>`;
+    let blockCreate = `<div style = "background: ${getRandomHexColor()}; width: ${width}px; height:${height}px"}"></div>`;
     pasteBlock.insertAdjacentHTML("beforeend", blockCreate);
-    // let blockCreate = document.createElement('div');
-    // blockCreate.setAttribute('width', width+'px');
-    // blockCreate.setAttribute('height', height + 'px');
     width += 10;
     height += 10;
-
-    // blockCreate.style.background = getRandomHexColor();
-    // pasteBlock.append(blockCreate);
   }
 }
-// console.log(createBoxes(10));
 
 const createEvent = (event) => {
   const amount = +inputNumber.value;
   createBoxes(amount);
+  inputNumber.value = "";
 };
 
-inputNumber.addEventListener('change', (event) => {
-  event.currentTarget.reset();
-})
-
 function destroyBoxes() {
-  pasteBlock.remove(pasteBlock.children);
+  pasteBlock.innerHTML = '';
 }
 const killThemAll = () => {
-  destroyBoxes()
-}
+  destroyBoxes();
+};
 btnCreate.addEventListener("click", createEvent);
-btnDestroy.addEventListener('click', killThemAll);
+btnDestroy.addEventListener("click", killThemAll);

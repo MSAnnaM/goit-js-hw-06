@@ -1,7 +1,7 @@
 const inputArea = document.getElementById('validation-input');
 
-const styleInput = () => {
-    const inputText = inputArea.value.length;
+const styleInput = (event) => {
+    const inputText = event.currentTarget.value.length;
     console.log(typeof inputText);
     
     if (inputText === +inputArea.getAttribute('data-length')) {
