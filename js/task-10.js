@@ -27,8 +27,8 @@ const createEvent = (event) => {
 function destroyBoxes() {
   pasteBlock.innerHTML = '';
 }
-const killThemAll = () => {
+const killEmAll = () => {
   destroyBoxes();
 };
 btnCreate.addEventListener("click", createEvent);
-btnDestroy.addEventListener("click", killThemAll);
+btnDestroy.addEventListener("click", killEmAll);
