@@ -14,10 +14,9 @@ const images = [
 ];
 const finalList = document.querySelector(".gallery");
 const link = images
-  .map((object) => `<li><img src="${object.url} alt = "${object.alt} width = "300" height = "auto">"`)
+  .map((object) => `<li><img src="${object.url} alt = "${object.alt} width = "500" height = "300">`)
   .join("");
 
 finalList.insertAdjacentHTML("afterbegin", link);
 finalList.style.display = 'flex';
-finalList.style.width = '100px';
 

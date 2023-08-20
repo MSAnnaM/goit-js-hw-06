@@ -7,9 +7,10 @@ const inputNumber = document.querySelector("input");
 const btnCreate = inputNumber.nextElementSibling;
 const btnDestroy = btnCreate.nextElementSibling;
 const pasteBlock = document.getElementById("boxes");
-let width = 30;
-let height = 30;
+
 function createBoxes(amount) {
+  let width = 30;
+let height = 30;
   for (let i = 0; i < amount; i++) {
     let blockCreate = `<div style = "background: ${getRandomHexColor()}; width: ${width}px; height:${height}px"}"></div>`;
     pasteBlock.insertAdjacentHTML("beforeend", blockCreate);
