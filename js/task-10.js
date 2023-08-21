@@ -9,14 +9,14 @@ const btnDestroy = btnCreate.nextElementSibling;
 const pasteBlock = document.getElementById("boxes");
 
 function createBoxes(amount) {
-  let width = 30;
-let height = 30;
+  let size = 30;
+  const arrDiv = [];
   for (let i = 0; i < amount; i++) {
-    let blockCreate = `<div style = "background: ${getRandomHexColor()}; width: ${width}px; height:${height}px"}"></div>`;
-    pasteBlock.insertAdjacentHTML("beforeend", blockCreate);
-    width += 10;
-    height += 10;
+    let blockCreate = `<div style = "background: ${getRandomHexColor()}; width: ${size}px; height:${size}px"}"></div>`;
+    arrDiv.push(blockCreate);
+    size += 10;
   }
+  pasteBlock.insertAdjacentHTML("beforeend", arrDiv.join(""));
 }
 
 const createEvent = (event) => {
@@ -26,7 +26,7 @@ const createEvent = (event) => {
 };
 
 function destroyBoxes() {
-  pasteBlock.innerHTML = '';
+  pasteBlock.innerHTML = "";
 }
 const killEmAll = () => {
   destroyBoxes();

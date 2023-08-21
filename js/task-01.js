@@ -1,10 +1,9 @@
-const count = document.querySelectorAll(".item").length;
-console.log(`Number of categories: ${count}`);
+const count = document.querySelector("#categories");
+console.log(`Number of categories: ${count.children.length}`);
 
-const title = document
-  .querySelectorAll("h2")
+const title = [...count.children]
   .forEach((elem) =>
-    console.log(
-      `Category: ${elem.textContent} \nElements:${elem.nextElementSibling.children.length}`
-    )
-  );
+  console.log(
+    `Category: ${elem.firstElementChild.textContent} \nElements:${elem.lastElementChild.children.length}`
+  )
+);

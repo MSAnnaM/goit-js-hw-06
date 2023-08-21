@@ -7,9 +7,11 @@ const ingredients = [
   "Condiments",
 ];
 const search = document.querySelector("#ingredients");
+const arrIngredients = [];
 for (let ingredient of ingredients) {
   let create = document.createElement("li");
 create.className = "item";
-  create.innerHTML = ingredient;
-  search.append(create)
+  create.textContent = ingredient;
+  arrIngredients.push(create);
 }
+search.append(...arrIngredients)
